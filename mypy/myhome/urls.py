@@ -18,6 +18,14 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
+	#首页
     url(r'^$', views.index,name='myhome_index'),
-    # url(r'^$', views.index,name='index'),
+    #列表
+    url(r'^list$', views.list,name='myhome_list'),
+    #详情
+    url(r'^info$', views.info,name='myhome_info'),
+    #登陆
+    url(r'^login$', views.login,name='myhome_login'),
+    #注册
+    url(r'^register$', views.register,name='myhome_register'),
 ]

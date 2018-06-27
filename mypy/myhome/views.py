@@ -4,3 +4,19 @@ from django.http import HttpResponse
 
 def index(request):
 	return render(request,'myhome/index.html')
+def list(request):
+
+	return HttpResponse('list')
+	return render(request,'myhome/list .html')
+
+def info(request):
+
+	return HttpResponse('info')
+
+def login(request):
+
+	return HttpResponse('login')
+
+def register(request):
+
+	return HttpResponse('register')
