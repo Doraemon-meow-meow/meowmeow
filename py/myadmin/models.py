@@ -33,8 +33,9 @@ class Types(models.Model):
     pid = models.IntegerField()
     path = models.CharField(max_length=50)
 
+
     def __str__(self):
-        return
+        return '<Types: Types object:'+self.name+'>'
 
 
 # 商品模型

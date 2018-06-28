@@ -1,15 +1,28 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from hou.models import Users
+from hou.models import Users,Types,Goods
 
 from django.contrib.auth.hashers import make_password, check_password
 
 # Create your views here.
 #首页
 def qian(request):
-	
+
+	data = Types.objects.filter(pid=0)
+
+	erdata = []
+
+	for x in data:
+		x.sub = Types.objects.filter(pid=x.id)
+		for v in x.sub:
+			v.goodssub = Goods.objects.filter(typeid=v.id)
+			erdata.append(v)
+
 	return render(request,'qian/index.html')
+	context = {'typegoodlist':data}
+	return render(request,'myhome/index.html',context)
+
 
 
 #详情页
